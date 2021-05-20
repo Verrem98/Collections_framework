@@ -23,16 +23,17 @@ public class Utils {
     }
 
 
-    public ArrayList bubbleSort(ArrayList list) {
-        /** Returns a list sorted with bubble sort*/
 
+    public ArrayList bubbleSortV2(ArrayList list) {
+        /** Returns a list sorted with bubble sort, uses compareTo which is much better for strings(doesn't just look at the first character)*/
 
         while (true) {
 
             boolean swap = false;
 
             for (int i = 0; i < list.size() - 1; i++) {
-                if ((int) list.get(i).toString().charAt(0) > (int) list.get(i + 1).toString().charAt(0)) {
+
+                if(list.get(i).toString().compareTo(list.get(i+1).toString())>0){
 
                     String smaller = list.get(i + 1).toString();
                     String bigger = list.get(i).toString();
@@ -52,16 +53,16 @@ public class Utils {
     }
 
 
-    public ArrayList bubbleSortV2(ArrayList list) {
-        /** Returns a list sorted with bubble sort, uses compareTo which is much better for strings(doesn't just look at the first character)*/
+    public ArrayList bubbleSort(ArrayList list) {
+        /** Returns a list sorted with bubble sort*/
+
 
         while (true) {
 
             boolean swap = false;
 
             for (int i = 0; i < list.size() - 1; i++) {
-
-                if(list.get(i).toString().compareTo(list.get(i+1).toString())>0){
+                if ((int) list.get(i).toString().charAt(0) > (int) list.get(i + 1).toString().charAt(0)) {
 
                     String smaller = list.get(i + 1).toString();
                     String bigger = list.get(i).toString();
